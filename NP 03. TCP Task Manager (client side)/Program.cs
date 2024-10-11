@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
 
-var ip = IPAddress.Parse("10.2.22.13");
+var ip = IPAddress.Parse("127.0.0.1");
 var port = 27001;
 
 var client = new TcpClient();
@@ -49,6 +49,10 @@ while (true)
 
             break;
         case Command.Run:
+            command = new Command { Text = input[0], Param = input[1] };
+            bw.Write(JsonSerializer.Serialize(command));
+            responce = br.ReadString();
+            Console.WriteLine(responce);
             break;
         case Command.Kill:
             break;

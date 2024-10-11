@@ -20,6 +20,7 @@ while (true)
     while (true)
     {
         var input = br.ReadString();
+        Console.WriteLine(input);
         var command = JsonSerializer.Deserialize<Command>(input);
         switch (command!.Text)
         {
@@ -30,6 +31,8 @@ while (true)
                 bw.Write(processNames);
                 break;
             case Command.Run:
+                var process = Process.Start(command.Param!);
+                bw.Write($"{process.ProcessName} is started");
                 break;
             case Command.Kill:
                 break;
