@@ -8,7 +8,7 @@ BinaryReader br = null;
 BinaryWriter bw = null;
 List<TcpClient> clients = [];
 
-var ip = IPAddress.Parse("127.0.0.1");
+var ip = IPAddress.Parse("10.2.22.1");
 var port = 27001;
 var endPoint = new IPEndPoint(ip, port);
 listener = new TcpListener(endPoint);

@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 
 var client = new TcpClient();
-var ip = IPAddress.Parse("127.0.0.1");
+var ip = IPAddress.Parse("10.2.22.1");
 var port = 27001;
 var endPoint = new IPEndPoint(ip, port);
 
